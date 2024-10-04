@@ -1,0 +1,6 @@
+SELECT
+  *
+FROM
+  public.genres
+WHERE
+  "name" ilike '%{{genres_select.filterText}}%'

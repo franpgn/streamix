@@ -1,0 +1,1 @@
+SELECT COUNT(*) from public.movies where title ilike '%{{tbl_movies.searchText}}%';

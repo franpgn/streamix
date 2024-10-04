@@ -1,0 +1,15 @@
+SELECT
+  *
+FROM
+  public.movies
+	{{genres_select.selectedOptionValues.length !== 0 ? "INNER JOIN public.movie_genres ON public.movies.id = public.movie_genres.movie_id INNER JOIN public.genres ON public.movie_genres.genre_id = public.genres.id" : ""}}
+WHERE
+  "title" ilike '%{{tbl_movies.searchText}}%'
+	{{score_input.text !== null ? "AND vote_average >= '" + score_input.text + "'" : ""}}
+	{{status_select.selectedOptionValue.length !== 0 ? "AND status = '" + status_select.selectedOptionValue + "'" : ""}}
+	{{genres_select.selectedOptionValues.length !== 0 ? "AND public.genres.id IN (" + genres_select.selectedOptionValues + ")" : "ORDER BY " + 'identifier'}}
+	{{tbl_movies.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{tbl_movies.pageSize}}
+OFFSET
+  {{tbl_movies.pageOffset}}
