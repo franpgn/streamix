@@ -9,7 +9,7 @@
     {
       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 2450,
+      "bottomRow": 2420,
       "boxShadow": "none",
       "canExtend": false,
       "containerStyle": "none",

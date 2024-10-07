@@ -302,7 +302,7 @@
   "mobileRightColumn": 26,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onSubmit": "{{Insert_public_movies2.run(() => {\n            showAlert(\"undefined\");\n            \n          }, () => {\n            showAlert(\"Unable to create!\");\n          })}}",
+  "onSubmit": "{{Insert_public_movies2.run(() => {\n  closeModal(Modal1.name);\n  showAlert('Movie Recorded!', 'success');\n}, () => {\n  showAlert(\"Unable to create!\");\n});}}",
   "originalBottomRow": 161,
   "originalTopRow": 0,
   "parentColumnSpace": 6.9375,
